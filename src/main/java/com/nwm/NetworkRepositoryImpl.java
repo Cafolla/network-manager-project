@@ -41,7 +41,8 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     @Override
     @Transactional
     public void deleteNode(int id) {
-        Query query = entityManager.createQuery("delete from Node where id = " +id);
+        Query query = entityManager.createQuery("delete from Node where id = :id");
+        query.setParameter("id", id);
         query.executeUpdate();
     }
 
@@ -49,8 +50,9 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     @Transactional
     public Collection<Node> getAll() {
 
-        String sql = "Select s from NODE s";
+        String sql = "Select s from Node s";
         TypedQuery<Node> query = entityManager.createQuery(sql,Node.class);
         return query.getResultList();
+
     }
 }
