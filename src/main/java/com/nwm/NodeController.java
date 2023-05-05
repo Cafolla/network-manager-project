@@ -11,12 +11,14 @@ public class NodeController {
 
     @PostMapping
     public ResponseEntity<Node> addNode(@RequestBody Node node){
-    return ResponseEntity.ok()
+    //return ResponseEntity.ok()
+        return null;
     }
     @GetMapping
     public ResponseEntity<Iterable<Node>> getAllNodes(){
 
-        return ResponseEntity.ok().body().;
+      //  return ResponseEntity.ok().body().;
+        return null;
     }
 
     public void update(){
