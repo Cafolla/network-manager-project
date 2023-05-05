@@ -1,7 +1,7 @@
 package com.nwm;
 
 public interface NetworkRepository {
-    void addNode(int id);
+    int addNode(Node node);
     Node getNodeById(int id);
 
     void updateNode(int id);
