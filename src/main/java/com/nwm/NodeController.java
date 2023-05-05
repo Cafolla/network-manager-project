@@ -38,7 +38,7 @@ public class NodeController {
     }
     @PutMapping
     public ResponseEntity<Integer> update(Node newNode, int id){
-        int meid = repo.updateNode(newNode, id);
+        long meid = repo.updateNode(newNode, id);
         if(meid==0){
             return ResponseEntity.badRequest().build();
         }

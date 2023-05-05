@@ -3,6 +3,7 @@ package com.nwm;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
@@ -14,22 +15,23 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     private EntityManager entityManager;
     @Override
     @Transactional
-    public int addNode(Node node) {
+    public Long addNode(Node node) {
         entityManager.persist(node);
         entityManager.flush();
+
         return node.getId();
     }
 
     @Override
     @Transactional
-    public Node getNodeById(int id) {
+    public Node getNodeById(long id) {
 
       return  entityManager.find(Node.class, id);
     }
 
     @Override
     @Transactional
-    public int updateNode(Node newNode, int id) {
+    public Long updateNode(Node newNode, long id) {
         Node currentNode = entityManager.find(Node.class, id);
         currentNode = newNode;
         entityManager.flush();
@@ -46,6 +48,9 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     @Override
     @Transactional
     public Collection<Node> getAll() {
-        return null;
+
+        String sql = "Select s from NODE s";
+        TypedQuery<Node> query = entityManager.createQuery(sql,Node.class);
+        return query.getResultList();
     }
 }

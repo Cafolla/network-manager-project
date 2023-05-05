@@ -3,10 +3,10 @@ package com.nwm;
 import java.util.Collection;
 
 public interface NetworkRepository {
-    int addNode(Node node);
-    Node getNodeById(int id);
+    Long addNode(Node node);
+    Node getNodeById(long id);
 
-    int updateNode(Node newNode, int id);
+    Long updateNode(Node newNode, long id);
 
     void deleteNode(int id);
 

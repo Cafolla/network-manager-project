@@ -1,17 +1,15 @@
 package com.nwm;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table
 public class Node {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long  id;
     private String name;
 
     private String location;
@@ -32,7 +30,7 @@ public class Node {
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
