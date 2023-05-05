@@ -6,7 +6,7 @@ public interface NetworkRepository {
     int addNode(Node node);
     Node getNodeById(int id);
 
-    void updateNode(int id);
+    int updateNode(Node newNode, int id);
 
     void deleteNode(int id);
 

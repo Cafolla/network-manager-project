@@ -29,9 +29,11 @@ public class NetworkRepositoryImpl implements NetworkRepository {
 
     @Override
     @Transactional
-    public void updateNode(int id) {
+    public int updateNode(Node newNode, int id) {
         Node currentNode = entityManager.find(Node.class, id);
-
+        currentNode = newNode;
+        entityManager.flush();
+        return currentNode.getId();
     }
 
     @Override
