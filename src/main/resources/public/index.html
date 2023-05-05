@@ -11,18 +11,20 @@
 </head>
 <body>
 
+<div id = "all">
 
-    <center><img src ="1.jpg" width = "40%"></img>
+
+    <center><img src ="1.jpg" width = "30%"></img>
         <br>
     <p>Welcome to our network mangement software</p>
 
     <button onclick = abc()> get list !</button>
     </center>
-
+</div>
     <div id = "list"></div>
 
 
-    <div id="mapid" style="height: 400px;"></div>
+    <div id="mapid" style="height: 600px;"></div>
 
 <script>
 
@@ -55,6 +57,7 @@
     }
 
     function abc() {
+        document.getElementById("all").style.display="none";
         $.ajax({
             type: "GET",
             url: "http://localhost:8080/ericsson/get/",
