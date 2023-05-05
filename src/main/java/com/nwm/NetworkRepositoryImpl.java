@@ -49,7 +49,7 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     @Transactional
     public Collection<Node> getAll() {
 
-        String sql = "Select s from NODE s";
+        String sql = "SELECT s from Node s ";
         TypedQuery<Node> query = entityManager.createQuery(sql,Node.class);
         return query.getResultList();
     }
