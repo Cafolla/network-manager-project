@@ -33,9 +33,14 @@ public class NetworkRepositoryImpl implements NetworkRepository {
     @Transactional
     public Long updateNode(Node newNode, long id) {
         Node currentNode = entityManager.find(Node.class, id);
-        currentNode = newNode;
-        entityManager.flush();
-        return currentNode.getId();
+       if(currentNode == null){
+           return 0L;
+       }
+       else{
+           currentNode = newNode;
+           entityManager.persist(currentNode);
+           return currentNode.getId();
+       }
     }
 
     @Override

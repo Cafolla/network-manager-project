@@ -18,7 +18,7 @@ public class Node {
 
     private float longitude;
 
-    public Node(int id, String name, String location, int latitude, int longitude) {
+    public Node(long id, String name, String location, float latitude, float longitude) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -33,6 +33,8 @@ public class Node {
     public long getId() {
         return id;
     }
+
+
 
 
     public String getName() {
@@ -68,4 +70,6 @@ public class Node {
     }
 
 
+    public void setId(long i) {
+    }
 }
