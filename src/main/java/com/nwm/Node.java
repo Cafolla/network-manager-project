@@ -16,9 +16,9 @@ public class Node {
 
     private String location;
 
-    private int latitude;
+    private float latitude;
 
-    private int longitude;
+    private float longitude;
 
     public Node(int id, String name, String location, int latitude, int longitude) {
         this.id = id;
@@ -53,19 +53,19 @@ public class Node {
         this.location = location;
     }
 
-    public int getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
